@@ -1,3 +1,13 @@
+// Get the guest name from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const guestName = urlParams.get("guest");
+
+const guestNameElement = document.getElementById("guestName");
+
+if (guestName && guestNameElement) {
+    guestNameElement.textContent = guestName;
+}
+
 document
     .getElementById("scrollButton")
     .addEventListener("click", function () {
@@ -176,11 +186,27 @@ const openInvitation =
 
 openInvitation.addEventListener("click", function () {
 
-    // Start heart opening animation
+    // Start the wedding music
+    const weddingMusic = document.getElementById("weddingMusic");
+
+    weddingMusic.volume = 0.5;
+
+    weddingMusic.play().catch(function(error) {
+        console.log("Music could not autoplay:", error);
+    });
+
+    // Open the invitation
     welcomeScreen.classList.add("opening");
 
-    // Unlock the wedding website
     document.body.classList.remove("invitation-locked");
     document.body.classList.add("invitation-open");
 
 });
+
+// For each Invitee
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("guest");
+
+if (guest) {
+    document.getElementById("guestName").textContent = guest;
+}

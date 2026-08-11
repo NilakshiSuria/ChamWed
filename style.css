@@ -91,6 +91,31 @@ h1 span {
     line-height: 2;
 }
 
+.request-text {
+    margin-top: 25px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #26352d;
+}
+
+.guest-name {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #a98542;
+}
+
+.invitation-text {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #26352d;
+}
+
 .divider {
     width: 100px;
     height: 1px;
@@ -822,7 +847,7 @@ button span {
 
     text-align: center;
 
-    background: #f8f4ec;
+    background: #e8e2d5;
 }
 
 .venue-content {
@@ -1822,7 +1847,7 @@ button span {
 }
 
 
-/* N ♡ A */
+/* C ♡ I */
 
 .welcome-monogram {
     margin-bottom: 18px;
@@ -2025,4 +2050,264 @@ body.invitation-locked > *:not(#welcomeScreen) {
 
 body.invitation-open > *:not(#welcomeScreen) {
     visibility: visible;
+}
+
+/* Hide the music page/section */
+.music-section {
+    display: none !important;
+}
+
+/* =========================================
+   THANK YOU — SOFT FLORAL STYLE
+========================================= */
+
+.final-section {
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #26332c;
+}
+
+/* Thank You text */
+.final-section h2,
+.final-section h3,
+.final-section p {
+    color: #26332c;
+}
+
+/* Gold decorative elements */
+.final-section .final-flower,
+.final-section .final-divider,
+.final-section .final-monogram {
+    color: #b58b3a;
+}
+
+/* =========================================
+   COUPLE PORTRAIT CIRCLES
+========================================= */
+
+.person .photo-placeholder,
+.person .photo {
+    width: 180px !important;
+    height: 180px !important;
+
+    min-width: 180px !important;
+    min-height: 180px !important;
+
+    max-width: 180px !important;
+    max-height: 180px !important;
+
+    margin: 0 auto 25px !important;
+
+    border-radius: 50% !important;
+    overflow: hidden !important;
+
+    border: 2px solid #c49a4b !important;
+
+    padding: 0 !important;
+
+    background: #eee8dc !important;
+
+    display: block !important;
+}
+
+.person .photo-placeholder img,
+.person .photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    border-radius: 50% !important;
+}
+
+/* =========================================
+   PERSONALIZED GUEST GREETING
+========================================= */
+
+.guest-greeting {
+    margin-top: 18px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #8b6a35;
+    text-align: center;
+}
+
+/* Photo inside the invitation box */
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.welcome-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.welcome-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.22;
+}
+
+/* Soft white overlay over the photo */
+
+.welcome-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(250, 247, 240, 0.55);
+}
+
+.welcome-content > *:not(.welcome-photo) {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   MEMORIES - PHOTO STRIP
+========================================= */
+
+.memory-strip {
+    width: 100%;
+    max-width: 850px;
+    margin: 60px auto 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 25px;
+
+    position: relative;
+}
+
+
+/* Individual photo */
+
+.memory-item {
+    width: 180px;
+    position: relative;
+}
+
+
+/* Numbers */
+
+.memory-number {
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+    font-weight: 400;
+
+    color: #30352f;
+
+    line-height: 1;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+
+/* Photo */
+
+.memory-photo {
+    width: 100%;
+    height: 390px;
+
+    overflow: hidden;
+
+    background: #eee9df;
+}
+
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Different heights / positions */
+
+.memory-one {
+    margin-top: 0;
+}
+
+.memory-two {
+    margin-top: 75px;
+}
+
+.memory-three {
+    margin-top: 30px;
+}
+/* =========================================
+   MOBILE MEMORIES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .memory-strip {
+        width: 94%;
+
+        gap: 8px;
+
+        margin-top: 40px;
+    }
+
+
+    .memory-item {
+        width: 31%;
+    }
+
+
+    .memory-number {
+        font-size: 27px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .memory-photo {
+        height: 270px;
+    }
+
+
+    .memory-one {
+        margin-top: 0;
+    }
+
+
+    .memory-two {
+        margin-top: 45px;
+    }
+
+
+    .memory-three {
+        margin-top: 20px;
+    }
+
 }

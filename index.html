@@ -14,17 +14,26 @@
 
 <body class="invitation-locked">
 
+    <!-- Play Music -->
+    <audio id="weddingMusic" preload="auto" loop hidden>
+    <source src="music/wedding-song.mpeg" type="audio/mpeg">
+</audio>
+
     <!-- Welcome Screen -->
 <div id="welcomeScreen" class="welcome-screen">
 
     <div class="welcome-content">
+
+        <div class="welcome-photo">
+            <img src="images/couple-lock.jpeg" alt="Chameli and Isuru">
+        </div>
 
         <!--<p class="welcome-small">
             TOGETHER WITH THEIR FAMILIES
         </p>
     -->
         <div class="welcome-monogram">
-            C <span>♡</span> I
+            C <span>♥</span> I
         </div>
 
         <h1>
@@ -64,9 +73,10 @@
 
         <div class="hero-content">
 
-            <div class="monogram">
-                C <span>♡</span> I
+           <!-- <div class="monogram">
+                C <span>♥</span> I
             </div>
+        -->
 
             <p class="family-text">
                 TOGETHER WITH THEIR FAMILIES
@@ -78,10 +88,16 @@
                 Isuru
             </h1>
 
-            <p class="invite-text">
-                INVITE YOU TO CELEBRATE
-                <br>
-                THEIR WEDDING
+            <p class="request-text">
+                REQUEST THE HONOUR OF THE PRESENCE OF
+            </p>
+
+            <p class="guest-name">
+                Dear <span id="guestName">Guest</span>,
+            </p>
+
+            <p class="invitation-text">
+                AT OUR MARRIAGE CEREMONY
             </p>
 
             <div class="divider"></div>
@@ -103,368 +119,7 @@
 
     </section>
 
-    <!-- Our Story Section -->
-<section class="story">
-
-    <div class="story-content">
-
-        <p class="section-label">
-            OUR STORY
-        </p>
-
-        <h2>
-            Two hearts.
-            <br>
-            One beautiful journey.
-        </h2>
-
-        <div class="story-divider">
-            ♡
-        </div>
-
-
-        <!-- Bride -->
-        <div class="person">
-
-            <div class="photo-placeholder">
-                C
-            </div>
-
-            <h3>
-                Chameli
-            </h3>
-
-            <p>
-                Kind heart
-                <br>
-                Bright smile
-                <br>
-                A soul of pure love
-            </p>
-
-        </div>
-
-
-        <div class="heart">
-            ♡
-        </div>
-
-
-        <!-- Groom -->
-        <div class="person">
-
-            <div class="photo-placeholder">
-                I
-            </div>
-
-            <h3>
-                Isuru
-            </h3>
-
-            <p>
-                Thoughtful
-                <br>
-                Determined
-                <br>
-                My forever
-            </p>
-
-        </div>
-
-
-        <p class="story-ending">
-            Two hearts, one story,
-            <br>
-            and a lifetime to go.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- Photo Gallery -->
-<section class="gallery">
-
-    <div class="gallery-content">
-
-        <p class="section-label">
-            PRECIOUS MOMENTS
-        </p>
-
-        <h2>
-            Memories
-        </h2>
-
-        <p class="gallery-intro">
-            A collection of moments that brought
-            two hearts closer together.
-        </p>
-
-
-        <div class="photo-grid">
-
-    <!-- Large Photo -->
-    <div class="gallery-photo large-photo">
-
-        <img
-            src="images/couple-main.jpg"
-            alt="Chameli and Isuru"
-        >
-
-        <div class="photo-text">
-            C & I
-        </div>
-
-    </div>
-
-
-    <!-- Small Photo 1 -->
-    <div class="gallery-photo small-photo">
-
-        <img
-            src="images/couple-1.jpg"
-            alt="Chameli and Isuru"
-        >
-
-        <div class="photo-text">
-            ♡
-        </div>
-
-    </div>
-
-
-    <!-- Small Photo 2 -->
-    <div class="gallery-photo small-photo">
-
-        <img
-            src="images/couple-2.jpg"
-            alt="Chameli and Isuru"
-        >
-
-        <div class="photo-text">
-            ♡
-        </div>
-
-    </div>
-
-
-    <!-- Bottom Photo -->
-    <div class="gallery-photo wide-photo">
-
-        <img
-            src="images/couple-3.jpg"
-            alt="Chameli and Isuru"
-        >
-
-        <div class="photo-text">
-            Our journey
-        </div>
-
-    </div>
-
-</div>
-
-
-        <p class="gallery-quote">
-            "Some moments are worth
-            <br>
-            a lifetime."
-        </p>
-
-    </div>
-
-</section>
-
-<!-- Countdown Section -->
-<section class="countdown-section">
-
-    <div class="countdown-content">
-
-        <p class="section-label">
-            THE BIG DAY
-        </p>
-
-        <h2>
-            Counting down
-            <br>
-            to forever
-        </h2>
-
-        <div class="countdown-divider">
-            ♡
-        </div>
-
-        <div class="countdown">
-
-            <div class="countdown-item">
-                <span id="days">00</span>
-                <small>DAYS</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="hours">00</span>
-                <small>HOURS</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="minutes">00</span>
-                <small>MINUTES</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="seconds">00</span>
-                <small>SECONDS</small>
-            </div>
-
-        </div>
-
-        <p class="countdown-date">
-            04 March 2027
-        </p>
-
-    </div>
-
-</section>
-
 <!-- Wedding Day Section -->
-<section class="wedding-day">
-
-    <div class="wedding-day-content">
-
-        <p class="section-label">
-            THE WEDDING DAY
-        </p>
-
-        <h2>
-            A day filled with
-            <br>
-            love & joy
-        </h2>
-
-        <p class="day-intro">
-            Join us as we celebrate one of
-            life's most beautiful moments.
-        </p>
-
-
-        <div class="timeline">
-
-            <!-- Ceremony -->
-            <div class="timeline-item">
-
-                <div class="timeline-time">
-                    04:00 PM
-                </div>
-
-                <div class="timeline-dot">
-                    ♡
-                </div>
-
-                <div class="timeline-info">
-
-                    <h3>
-                        Wedding Ceremony
-                    </h3>
-
-                    <p>
-                        Vows, blessings
-                        <br>
-                        & beautiful beginnings
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Reception -->
-            <div class="timeline-item">
-
-                <div class="timeline-time">
-                    06:00 PM
-                </div>
-
-                <div class="timeline-dot">
-                    ♡
-                </div>
-
-                <div class="timeline-info">
-
-                    <h3>
-                        Reception
-                    </h3>
-
-                    <p>
-                        Photos, greetings
-                        <br>
-                        & celebration
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Dinner -->
-            <div class="timeline-item">
-
-                <div class="timeline-time">
-                    07:30 PM
-                </div>
-
-                <div class="timeline-dot">
-                    ♡
-                </div>
-
-                <div class="timeline-info">
-
-                    <h3>
-                        Dinner
-                    </h3>
-
-                    <p>
-                        Delicious food
-                        <br>
-                        & wonderful company
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Celebration -->
-            <div class="timeline-item">
-
-                <div class="timeline-time">
-                    09:00 PM
-                </div>
-
-                <div class="timeline-dot">
-                    ♡
-                </div>
-
-                <div class="timeline-info">
-
-                    <h3>
-                        Celebration
-                    </h3>
-
-                    <p>
-                        Music, dancing
-                        <br>
-                        & unforgettable memories
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 <!-- Venue Section -->
 <section class="venue">
@@ -571,7 +226,7 @@
             id="rsvpButton"
         >
             RSVP
-            <span>♡</span>
+            <span>♥</span>
         </a>
 
         <p class="rsvp-deadline">
@@ -583,6 +238,140 @@
     </div>
 
 </section>
+
+<!-- Photo Gallery -->
+<section class="gallery">
+
+    <div class="gallery-content">
+
+        <p class="section-label">
+            PRECIOUS MOMENTS
+        </p>
+
+        <h2>
+            Memories
+        </h2>
+
+        <p class="gallery-intro">
+            A collection of moments that brought
+            two hearts closer together.
+        </p>
+    <div class="memory-strip">
+
+    <!-- Photo 1 -->
+    <div class="memory-item memory-one">
+
+        <div class="final-flower">
+            ❀
+        </div>
+
+        <div class="memory-photo">
+            <img
+                src="images/couple-1.jpg"
+                alt="Chameli and Isuru"
+            >
+        </div>
+
+    </div>
+
+
+    <!-- Photo 2 -->
+    <div class="memory-item memory-two">
+
+        <div class="final-flower">
+            ❀
+        </div>
+
+        <div class="memory-photo">
+            <img
+                src="images/couple-2.jpg"
+                alt="Chameli and Isuru"
+            >
+        </div>
+
+    </div>
+
+
+    <!-- Photo 3 -->
+    <div class="memory-item memory-three">
+
+        <div class="final-flower">
+            ❀
+        </div>
+
+        <div class="memory-photo">
+            <img
+                src="images/couple-3.jpg"
+                alt="Chameli and Isuru"
+            >
+        </div>
+
+    </div>
+
+</div>
+
+
+        <p class="gallery-quote">
+            "Some moments are worth
+            <br>
+            a lifetime."
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Countdown Section -->
+<section class="countdown-section">
+
+    <div class="countdown-content">
+
+        <p class="section-label">
+            THE BIG DAY
+        </p>
+
+        <h2>
+            Counting down
+            <br>
+            to forever
+        </h2>
+
+        <div class="countdown-divider">
+            ♡
+        </div>
+
+        <div class="countdown">
+
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
+
+        </div>
+
+        <p class="countdown-date">
+            04 March 2027
+        </p>
+
+    </div>
+
+</section>
+
 
 <!-- Music Section -->
 <section class="music-section">
@@ -630,7 +419,7 @@
 </section>
 
 <!-- Final Section -->
-<section class="final-section">
+<!-- <section class="final-section">
 
     <div class="final-content">
 
@@ -653,7 +442,7 @@
         </div>
 
         <div class="final-monogram">
-            C <span>♡</span> I
+            C <span>♥</span> I
         </div>
 
         <h3>
@@ -671,6 +460,7 @@
     </div>
 
 </section>
+-->
 <!-- Back to Top -->
 <button
     id="topButton"
@@ -684,3 +474,4 @@
 
 </body>
 </html>
+
