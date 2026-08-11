@@ -1,0 +1,2028 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+}
+
+body {
+    background: #f8f4ec;
+    color: #26332b;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0.2px;
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 500px;
+    padding: 40px 25px;
+}
+
+.monogram {
+    width: 95px;
+    height: 95px;
+
+    border: 1px solid #b89555;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 35px;
+
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+.monogram span {
+    color: #b89555;
+    margin: 0 5px;
+}
+
+.family-text {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 58px;
+    font-weight: normal;
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    display: block;
+
+    font-size: 22px;
+    color: #b89555;
+
+    margin: 8px 0;
+}
+
+.invite-text {
+    font-size: 12px;
+    letter-spacing: 3px;
+    line-height: 2;
+}
+
+.divider {
+    width: 100px;
+    height: 1px;
+
+    background: #b89555;
+
+    margin: 30px auto;
+}
+
+.date {
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.day {
+    margin-top: 10px;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+button {
+    margin-top: 45px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #26332b;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+}
+
+button span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #b89555;
+
+    font-size: 22px;
+}
+
+.floral {
+    position: absolute;
+
+    color: #b89555;
+
+    font-size: 130px;
+
+    opacity: 0.15;
+}
+
+.floral-left {
+    left: -35px;
+    bottom: 20px;
+}
+
+.floral-right {
+    right: -35px;
+    top: 20px;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .monogram {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+/* =========================
+   OUR STORY
+========================= */
+
+.story {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #f3eee4;
+
+    position: relative;
+}
+
+.story-content {
+    max-width: 500px;
+    width: 100%;
+}
+
+.section-label {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #8d7040;
+
+    margin-bottom: 25px;
+}
+
+.story h2 {
+    font-size: 34px;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+.story-divider {
+    color: #b89555;
+
+    font-size: 24px;
+
+    margin-bottom: 45px;
+}
+
+
+/* Couple */
+
+.person {
+    margin: 35px 0;
+}
+
+.photo-placeholder {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    border: 1px solid #b89555;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+
+    color: #b89555;
+
+    background: #f8f4ec;
+}
+
+.person h3 {
+    font-size: 30px;
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+.person p {
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #5d625d;
+
+    letter-spacing: 1px;
+}
+
+
+/* Heart between couple */
+
+.heart {
+    color: #b89555;
+
+    font-size: 28px;
+
+    margin: 25px 0;
+}
+
+
+.story-ending {
+    margin-top: 60px;
+
+    font-style: italic;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #4f554f;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .story {
+        padding: 80px 20px;
+    }
+
+    .story h2 {
+        font-size: 29px;
+    }
+
+    .photo-placeholder {
+        width: 135px;
+        height: 135px;
+    }
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 25px;
+
+    background: #f8f4ec;
+
+    text-align: center;
+}
+
+.gallery-content {
+    max-width: 650px;
+    width: 100%;
+}
+
+.gallery h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.gallery-intro {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #666b65;
+
+    max-width: 400px;
+
+    margin: 0 auto 45px;
+}
+
+
+/* Gallery grid */
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    max-width: 550px;
+
+    margin: 0 auto;
+}
+
+
+/* Photo placeholders */
+
+.gallery-photo {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #d1bd91;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8e0d2,
+            #d8d0c0
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #7d735f;
+}
+
+
+/* Large main photo */
+
+.large-photo {
+    grid-column: span 2;
+
+    height: 300px;
+}
+
+
+/* Small photos */
+
+.small-photo {
+    height: 220px;
+}
+
+
+/* Bottom wide photo */
+
+.wide-photo {
+    grid-column: span 2;
+
+    height: 220px;
+}
+
+
+.photo-text {
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+
+
+/* Quote */
+
+.gallery-quote {
+    margin-top: 50px;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: #4f554f;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .gallery {
+        padding: 80px 18px;
+    }
+
+    .gallery h2 {
+        font-size: 32px;
+    }
+
+    .large-photo {
+        height: 240px;
+    }
+
+    .small-photo {
+        height: 170px;
+    }
+
+    .wide-photo {
+        height: 180px;
+    }
+
+}
+
+/* Gallery images */
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    min-height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background: #26332b;
+
+    color: #f8f4ec;
+}
+
+.countdown-content {
+    width: 100%;
+    max-width: 650px;
+}
+
+.countdown-section .section-label {
+    color: #c8aa70;
+}
+
+.countdown-section h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+.countdown-divider {
+    color: #c8aa70;
+
+    font-size: 24px;
+
+    margin-bottom: 45px;
+}
+
+
+/* Countdown numbers */
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+}
+
+.countdown-item {
+    min-width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.countdown-item span {
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #f8f4ec;
+}
+
+.countdown-item small {
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #c8aa70;
+}
+
+.countdown-date {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #d8d1c4;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .countdown-section {
+        min-height: 65vh;
+    }
+
+    .countdown-section h2 {
+        font-size: 30px;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .countdown-item {
+        min-width: 65px;
+    }
+
+    .countdown-item span {
+        font-size: 28px;
+    }
+
+    .countdown-item small {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+}
+
+/* =========================
+   WEDDING DAY
+========================= */
+
+.wedding-day {
+    min-height: 100vh;
+
+    padding: 110px 25px;
+
+    display: flex;
+    justify-content: center;
+
+    background: #f3eee4;
+
+    text-align: center;
+}
+
+.wedding-day-content {
+    width: 100%;
+    max-width: 650px;
+}
+
+.wedding-day h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 18px;
+}
+
+.day-intro {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #666b65;
+
+    max-width: 400px;
+
+    margin: 0 auto 70px;
+}
+
+
+/* Timeline */
+
+.timeline {
+    position: relative;
+
+    max-width: 550px;
+
+    margin: 0 auto;
+}
+
+
+/* Vertical line */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 15px;
+
+    bottom: 15px;
+
+    width: 1px;
+
+    background: #cbb889;
+
+    transform: translateX(-50%);
+}
+
+
+/* Individual item */
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 50px 1fr;
+
+    align-items: center;
+
+    margin-bottom: 65px;
+}
+
+
+/* Time */
+
+.timeline-time {
+    text-align: right;
+
+    padding-right: 25px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #8d7040;
+}
+
+
+/* Circle */
+
+.timeline-dot {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid #b89555;
+
+    background: #f3eee4;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #b89555;
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+/* Information */
+
+.timeline-info {
+    text-align: left;
+
+    padding-left: 25px;
+}
+
+.timeline-info h3 {
+    font-size: 18px;
+
+    font-weight: normal;
+
+    margin-bottom: 8px;
+}
+
+.timeline-info p {
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #666b65;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .wedding-day {
+        padding: 90px 18px;
+    }
+
+    .wedding-day h2 {
+        font-size: 30px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 75px 45px 1fr;
+    }
+
+    .timeline-time {
+        font-size: 10px;
+
+        padding-right: 10px;
+
+        letter-spacing: 1px;
+    }
+
+    .timeline-info {
+        padding-left: 15px;
+    }
+
+    .timeline-info h3 {
+        font-size: 16px;
+    }
+
+}
+
+/* =========================
+   VENUE
+========================= */
+
+.venue {
+    min-height: 100vh;
+
+    padding: 110px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #f8f4ec;
+}
+
+.venue-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+.venue h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.venue-intro {
+    max-width: 400px;
+
+    margin: 0 auto 45px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #666b65;
+}
+
+
+/* Venue Image */
+
+.venue-image {
+    width: 100%;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    border: 1px solid #cbb889;
+
+    margin-bottom: 35px;
+}
+
+.venue-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Venue Details */
+
+.venue-details h3 {
+    font-size: 24px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+.venue-details p {
+    font-size: 14px;
+
+    color: #666b65;
+
+    line-height: 1.8;
+}
+
+.venue-address {
+    margin-top: 12px;
+}
+
+
+/* Maps Button */
+
+.map-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 35px;
+
+    padding: 14px 25px;
+
+    border: 1px solid #b89555;
+
+    color: #26332b;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition: all 0.3s ease;
+}
+
+.map-button:hover {
+    background: #26332b;
+
+    color: #f8f4ec;
+
+    border-color: #26332b;
+}
+
+
+/* Venue closing message */
+
+.venue-note {
+    margin-top: 45px;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: #555b55;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .venue {
+        padding: 90px 18px;
+    }
+
+    .venue h2 {
+        font-size: 30px;
+    }
+
+    .venue-image {
+        height: 250px;
+    }
+
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp {
+    min-height: 75vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 25px;
+
+    background: #26332b;
+
+    color: #f8f4ec;
+
+    text-align: center;
+}
+
+.rsvp-content {
+    width: 100%;
+    max-width: 550px;
+}
+
+.rsvp .section-label {
+    color: #c8aa70;
+}
+
+.rsvp h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+.rsvp-heart {
+    color: #c8aa70;
+
+    font-size: 25px;
+
+    margin-bottom: 30px;
+}
+
+.rsvp-text {
+    max-width: 400px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #d8d1c4;
+}
+
+
+/* RSVP Button */
+
+.rsvp-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 40px;
+
+    padding: 15px 38px;
+
+    border: 1px solid #c8aa70;
+
+    color: #f8f4ec;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    transition: all 0.3s ease;
+}
+
+.rsvp-button span {
+    color: #c8aa70;
+
+    font-size: 16px;
+}
+
+.rsvp-button:hover {
+    background: #c8aa70;
+
+    color: #26332b;
+}
+
+.rsvp-button:hover span {
+    color: #26332b;
+}
+
+
+/* RSVP Deadline */
+
+.rsvp-deadline {
+    margin-top: 40px;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+    letter-spacing: 1px;
+
+    color: #bdb7ac;
+}
+
+.rsvp-deadline strong {
+    color: #c8aa70;
+
+    font-weight: normal;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .rsvp {
+        min-height: 65vh;
+
+        padding: 90px 20px;
+    }
+
+    .rsvp h2 {
+        font-size: 30px;
+    }
+
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-section {
+    min-height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 90px 25px;
+
+    background: #f3eee4;
+
+    text-align: center;
+}
+
+.music-content {
+    max-width: 500px;
+    width: 100%;
+}
+
+.music-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 25px;
+
+    border: 1px solid #b89555;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #b89555;
+
+    font-size: 25px;
+}
+
+.music-section h2 {
+    font-size: 34px;
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 18px;
+}
+
+.music-text {
+    max-width: 350px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #666b65;
+}
+
+.music-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding: 14px 30px;
+
+    border: 1px solid #b89555;
+
+    background: transparent;
+
+    color: #26332b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    background: #26332b;
+
+    color: #f8f4ec;
+}
+
+.music-button span:first-child {
+    color: #b89555;
+}
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.final-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 25px;
+
+    background: #26332b;
+
+    color: #f8f4ec;
+
+    text-align: center;
+}
+
+.final-content {
+    width: 100%;
+    max-width: 550px;
+}
+
+.final-flower {
+    color: #c8aa70;
+
+    font-size: 45px;
+
+    margin-bottom: 35px;
+}
+
+.final-section .section-label {
+    color: #c8aa70;
+}
+
+.final-section h2 {
+    font-size: 36px;
+
+    font-weight: normal;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+.final-divider {
+    color: #c8aa70;
+
+    font-size: 24px;
+
+    margin-bottom: 40px;
+}
+
+.final-monogram {
+    width: 85px;
+    height: 85px;
+
+    border: 1px solid #c8aa70;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+.final-monogram span {
+    color: #c8aa70;
+
+    margin: 0 5px;
+}
+
+.final-section h3 {
+    font-size: 28px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.final-date {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #c8aa70;
+}
+
+.final-message {
+    margin-top: 45px;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #d8d1c4;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .final-section {
+        min-height: 80vh;
+
+        padding: 90px 20px;
+    }
+
+    .final-section h2 {
+        font-size: 29px;
+    }
+
+    .final-section h3 {
+        font-size: 24px;
+    }
+
+}
+
+/* =========================
+   LUXURY SCROLL ANIMATIONS
+========================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   PREMIUM PHOTO GALLERY
+========================= */
+
+.gallery-photo {
+    border: none;
+    background: #e8e0d2;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(184, 149, 85, 0.45);
+    pointer-events: none;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.gallery-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* =========================
+   PREMIUM COUNTDOWN
+========================= */
+
+.countdown-item {
+    padding: 12px 15px;
+}
+
+.countdown-item span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    letter-spacing: 1px;
+}
+
+.countdown-item small {
+    display: block;
+    margin-top: 10px;
+}
+
+/* =========================
+   PREMIUM TIMELINE
+========================= */
+
+.timeline-dot {
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.08);
+}
+
+.timeline-info h3 {
+    letter-spacing: 0.5px;
+}
+
+.timeline-time {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* =========================
+   PREMIUM OPENING
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.45),
+            transparent 60%
+        ),
+        #f8f4ec;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    letter-spacing: 1px;
+}
+
+.hero .date {
+    color: #8d7040;
+}
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+.hero-content {
+    animation: heroReveal 1.8s ease forwards;
+}
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   MONOGRAM ANIMATION
+========================= */
+
+.monogram {
+    animation: monogramReveal 2s ease forwards;
+}
+
+@keyframes monogramReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* =========================
+   FLORAL DECORATION
+========================= */
+
+.floral {
+    animation: floralFloat 5s ease-in-out infinite;
+}
+
+@keyframes floralFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   PREMIUM VENUE
+========================= */
+
+.venue-image {
+    position: relative;
+}
+
+.venue-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    pointer-events: none;
+}
+
+.venue-image img {
+    transition: transform 1s ease;
+}
+
+.venue-image:hover img {
+    transform: scale(1.03);
+}
+
+/* =========================
+   PREMIUM FINAL SCREEN
+========================= */
+
+.final-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.final-section::before,
+.final-section::after {
+    content: "❀";
+
+    position: absolute;
+
+    color: #c8aa70;
+
+    opacity: 0.12;
+
+    font-size: 150px;
+
+    pointer-events: none;
+}
+
+.final-section::before {
+    left: -45px;
+    bottom: -30px;
+}
+
+.final-section::after {
+    right: -45px;
+    top: -30px;
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+}
+
+.final-monogram {
+    transition: transform 0.6s ease;
+}
+
+.final-monogram:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   PREMIUM RSVP BUTTON
+========================= */
+
+.rsvp-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-button::before {
+    content: "";
+
+    position: absolute;
+
+    left: -100%;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(200, 170, 112, 0.15);
+
+    transition: left 0.5s ease;
+
+    pointer-events: none;
+}
+
+.rsvp-button:hover::before {
+    left: 0;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.top-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    margin: 0;
+
+    border: 1px solid #b89555;
+
+    border-radius: 50%;
+
+    background: #f8f4ec;
+
+    color: #26332b;
+
+    font-size: 18px;
+
+    z-index: 100;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.top-button.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.top-button:hover {
+    transform: translateY(-3px);
+}
+
+.gallery-photo .photo-text {
+    position: absolute;
+
+    left: 20px;
+    bottom: 18px;
+
+    z-index: 3;
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   WEDDING SECTION BACKGROUNDS
+========================================= */
+
+.story,
+.gallery,
+.wedding-day,
+.venue,
+.music-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative leaves */
+
+.story::before,
+.gallery::before,
+.wedding-day::before,
+.venue::before,
+.music-section::before {
+    content: "❧";
+
+    position: absolute;
+
+    left: -25px;
+    bottom: 20px;
+
+    font-size: 180px;
+
+    color: #b89555;
+
+    opacity: 0.12;
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+}
+
+
+/* Opposite decorative leaves */
+
+.story::after,
+.gallery::after,
+.wedding-day::after,
+.venue::after,
+.music-section::after {
+    content: "❧";
+
+    position: absolute;
+
+    right: -25px;
+    top: 20px;
+
+    font-size: 150px;
+
+    color: #b89555;
+
+    opacity: 0.10;
+
+    transform: rotate(160deg);
+
+    pointer-events: none;
+}
+
+/* =========================================
+   OPTION A — FLOATING HEART WELCOME SCREEN
+========================================= */
+
+.welcome-screen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("images/wedding-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+
+/* Main glass panel */
+
+.welcome-content {
+    width: min(90%, 520px);
+
+    padding: 50px 35px;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    border: 1px solid rgba(184, 149, 85, 0.45);
+
+    backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 15px 50px rgba(80, 60, 40, 0.10);
+}
+
+
+/* Family text */
+
+.welcome-small {
+    margin-bottom: 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #686258;
+}
+
+
+/* N ♡ A */
+
+.welcome-monogram {
+    margin-bottom: 18px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    letter-spacing: 5px;
+
+    color: #4f4a40;
+}
+
+.welcome-monogram span {
+    color: #b89555;
+}
+
+
+/* Names */
+
+.welcome-content h1 {
+    margin-bottom: 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 8vw, 58px);
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #4f4a40;
+}
+
+
+/* Wedding Invitation */
+
+.welcome-title {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #9b7940;
+}
+
+
+/* Divider */
+
+.welcome-divider {
+    margin: 30px 0;
+
+    color: #b89555;
+
+    font-size: 13px;
+}
+
+
+/* Heart */
+
+.heart-button {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    border: 1px solid #b89555;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    color: #b89555;
+
+    font-size: 31px;
+
+    cursor: pointer;
+
+    animation: heartPulse 2s ease-in-out infinite;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.heart-button:hover {
+    background: rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 0 25px rgba(184, 149, 85, 0.30);
+}
+
+
+/* Pulse */
+
+@keyframes heartPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Tap text */
+
+.tap-text {
+    margin-top: 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #686258;
+}
+
+
+/* =========================================
+   WHEN INVITATION OPENS
+========================================= */
+
+.welcome-screen.opening {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* Heart grows */
+
+.welcome-screen.opening .heart-button {
+    animation: heartOpen 0.8s ease forwards;
+}
+
+@keyframes heartOpen {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .welcome-content {
+        padding: 40px 25px;
+    }
+
+    .welcome-content h1 {
+        font-size: 38px;
+    }
+
+    .heart-button {
+        width: 65px;
+        height: 65px;
+
+        font-size: 28px;
+    }
+
+}
+
+/* =========================================
+   HIDE WEBSITE UNTIL HEART IS CLICKED
+========================================= */
+
+body.invitation-locked {
+    overflow: hidden;
+}
+
+body.invitation-locked > *:not(#welcomeScreen) {
+    visibility: hidden;
+}
+
+body.invitation-open > *:not(#welcomeScreen) {
+    visibility: visible;
+}
