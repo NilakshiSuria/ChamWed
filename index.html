@@ -25,28 +25,33 @@
     <div class="welcome-content">
 
         <div class="welcome-photo">
-            <img src="images/couple-lock.jpeg" alt="Chameli and Isuru">
+            <img src="images/couple-lock.jpg" alt="Chameli and Isuru">
         </div>
 
         <!--<p class="welcome-small">
             TOGETHER WITH THEIR FAMILIES
         </p>
     -->
-        <div class="welcome-monogram">
+        <!-- <div class="welcome-monogram">
             C <span>♥</span> I
         </div>
+    -->
 
-        <h1>
-           Chameli & Isuru
-        </h1>
+        <h2>
+           CHAMELI & ISURU
+        </h2>
+
+        <div class="welcome-divider">
+            ───── ♥ ─────
+        </div>
 
         <p class="welcome-title">
             WEDDING INVITATION
         </p>
 
-        <div class="welcome-divider">
-            ───── ♡ ─────
-        </div>
+        <br>
+
+    </br>
 
         <button
             id="openInvitation"
@@ -58,7 +63,7 @@
         </button>
 
         <p class="tap-text">
-            TAP TO OPEN
+            TAP THE HEART
         </p>
 
     </div>
@@ -70,6 +75,7 @@
 
         <div class="floral floral-left">❀</div>
         <div class="floral floral-right">❀</div>
+        <div class="floral floral-center">❀</div>
 
         <div class="hero-content">
 
@@ -82,11 +88,15 @@
                 TOGETHER WITH THEIR FAMILIES
             </p>
 
-            <h1>
-                Chameli
+            <h2>
+                CHAMELI 
+            <br>
+            </br>
                 <span>&</span>
-                Isuru
-            </h1>
+            <br>
+            </br>
+                ISURU
+            </h2>
 
             <p class="request-text">
                 REQUEST THE HONOUR OF THE PRESENCE OF
@@ -198,7 +208,7 @@
 <!-- RSVP Section -->
 <section class="rsvp">
 
-    <div class="rsvp-content">
+    <!-- <div class="rsvp-content">
 
         <p class="section-label">
             YOUR PRESENCE
@@ -236,6 +246,130 @@
         </p>
 
     </div>
+-->
+    <div class="rsvp-content">
+
+    <p class="section-label">
+        YOUR PRESENCE
+    </p>
+
+    <h2>
+        We would love
+        <br>
+        to celebrate with you
+    </h2>
+
+    <div class="rsvp-heart">
+        ♡
+    </div>
+
+    <p class="rsvp-text">
+        Your presence would mean
+        so much to us as we begin
+        this beautiful new chapter.
+    </p>
+
+
+    <!-- Guest Name -->
+
+    <div class="rsvp-field">
+
+        <label>
+            YOUR NAME
+        </label>
+
+        <input
+            type="text"
+            id="rsvpGuestName"
+            readonly
+        >
+
+    </div>
+
+
+    <!-- Attendance -->
+
+    <div class="rsvp-field attendance-field">
+
+        <label>
+            WILL YOU ATTEND?
+        </label>
+
+        <div class="attendance-buttons">
+
+            <button
+                type="button"
+                class="attendance-button"
+                data-attendance="Joyfully Accept"
+            >
+                JOYFULLY ACCEPT
+            </button>
+
+            <button
+                type="button"
+                class="attendance-button"
+                data-attendance="Regretfully Decline"
+            >
+                REGRETFULLY DECLINE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Number of Guests -->
+
+    <div class="rsvp-field">
+
+        <label>
+            NUMBER OF GUESTS
+        </label>
+
+        <div class="guest-counter">
+
+            <button
+                type="button"
+                id="minusGuest"
+            >
+                −
+            </button>
+
+            <span id="guestCount">
+                1
+            </span>
+
+            <button
+                type="button"
+                id="plusGuest"
+            >
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Submit -->
+
+    <button
+        type="button"
+        id="submitRsvp"
+        class="rsvp-button"
+    >
+        RSVP NOW <!-- ♥ -->
+    </button>
+
+
+    <!-- Message -->
+
+    <p
+        id="rsvpMessage"
+        class="rsvp-message"
+    ></p>
+
+</div>
 
 </section>
 
@@ -248,7 +382,7 @@
             PRECIOUS MOMENTS
         </p>
 
-        <h2>
+    <!----   <h2>
             Memories
         </h2>
 
@@ -256,6 +390,7 @@
             A collection of moments that brought
             two hearts closer together.
         </p>
+    -->
     <div class="memory-strip">
 
     <!-- Photo 1 -->
@@ -367,7 +502,13 @@
         <p class="countdown-date">
             04 March 2027
         </p>
-
+    <a
+    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Chameli%20%26%20Isuru%20Wedding&dates=20270304T180000/20270304T230000&details=We%20would%20love%20to%20celebrate%20our%20special%20day%20with%20you.&location=Taj%20Samudra%20Hotel%2C%20Colombo"
+    target="_blank"
+    class="calendar-button"
+    >
+    ADD TO GOOGLE CALENDAR
+    </a>
     </div>
 
 </section>
