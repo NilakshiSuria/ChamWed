@@ -1,32 +1,260 @@
+
+// =========================================
+// GOOGLE APPS SCRIPT API
+// =========================================
+const RSVP_API =
+    "https://script.google.com/macros/s/AKfycby5pcj98kNEDIcKYat8AGWjenMK23W0o3nRuKmAg5BAig4n8VXc1XXzpytexRdUAL4C/exec";
 // Get the guest name and code from the URL
 // =========================================
 // INVITATION DETAILS
 // =========================================
 
-const urlParams = new URLSearchParams(window.location.search);
+// =========================================
+// LOAD GUEST NAME FROM INVITATION CODE
+// =========================================
 
-const guestName = urlParams.get("guest");
-const invitationCode = urlParams.get("code");
+const urlParams =
+    new URLSearchParams(window.location.search);
+
+const invitationCode =
+    urlParams.get("code");
 
 const guestNameElement =
     document.getElementById("guestName");
 
-if (guestName && guestNameElement) {
-    guestNameElement.textContent = guestName;
+// =========================================
+// RSVP FORM
+// =========================================
+
+const rsvpGuestName = document.getElementById("rsvpGuestName");
+const attendanceButtons =
+    document.querySelectorAll(".attendance-button");
+
+/* const minusGuest =
+    document.getElementById("minusGuest");
+
+const plusGuest =
+    document.getElementById("plusGuest");
+*/
+/*const guestCount =
+    document.getElementById("guestCount"); */
+
+const submitRsvp =
+    document.getElementById("submitRsvp");
+
+const rsvpMessage =
+    document.getElementById("rsvpMessage");
+
+// RSVP LOCK STATUS
+let rsvpAlreadySubmitted = false;
+
+// FIXED NUMBER OF GUESTS FOR THIS INVITATION
+let allowedGuests = 0;
+
+
+// =========================================
+// SHARED INVITATION DATA
+// =========================================
+
+let invitationData = null;
+let invitationPromise = null;
+
+
+// =========================================
+// LOAD INVITATION DATA
+// =========================================
+
+function getInvitationData() {
+
+    // No invitation code
+    if (!invitationCode) {
+        return Promise.resolve(null);
+    }
+
+
+    // -----------------------------------------
+    // CHECK LOCAL CACHE FIRST
+    // -----------------------------------------
+
+    const cacheKey =
+        "wedding_invitation_" + invitationCode;
+
+    const cached =
+        localStorage.getItem(cacheKey);
+
+
+    if (cached) {
+
+        try {
+
+            const data =
+                JSON.parse(cached);
+
+            console.log(
+                "Using cached invitation:",
+                data
+            );
+
+            invitationData = data;
+
+        } catch (error) {
+
+            localStorage.removeItem(cacheKey);
+
+        }
+    }
+
+
+    // -----------------------------------------
+    // IF ALREADY LOADING, USE SAME REQUEST
+    // -----------------------------------------
+
+    if (invitationPromise) {
+
+        return invitationPromise;
+
+    }
+
+
+    // -----------------------------------------
+    // REQUEST FROM GOOGLE APPS SCRIPT
+    // -----------------------------------------
+
+    invitationPromise =
+        fetch(
+            RSVP_API +
+            "?action=checkRSVP&code=" +
+            encodeURIComponent(invitationCode)
+        )
+            .then(function (response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Server returned HTTP " +
+                        response.status
+                    );
+
+                }
+
+                return response.json();
+
+            })
+            .then(function (result) {
+
+                console.log(
+                    "Invitation data:",
+                    result
+                );
+
+
+                if (result.found) {
+
+                    invitationData =
+                        result;
+
+
+                    // Save for immediate loading
+                    localStorage.setItem(
+                        cacheKey,
+                        JSON.stringify(result)
+                    );
+
+                }
+
+                return result;
+
+            })
+            .catch(function (error) {
+
+                console.error(
+                    "Invitation request failed:",
+                    error
+                );
+
+                // If server fails but cache exists,
+                // still use cached information.
+                return invitationData;
+
+            });
+
+
+    return invitationPromise;
 }
 
-document
-    .getElementById("scrollButton")
-    .addEventListener("click", function () {
+// =========================================
+// DISPLAY INVITATION DATA
+// =========================================
 
+function displayInvitationData(data) {
+
+    if (
+        !data ||
+        !data.found
+    ) {
+
+        return;
+
+    }
+
+
+    // -----------------------------------------
+    // FIRST PAGE GUEST NAME
+    // -----------------------------------------
+
+    if (guestNameElement) {
+
+        guestNameElement.textContent =
+            data.guest;
+
+    }
+
+
+    // -----------------------------------------
+    // RSVP NAME
+    // -----------------------------------------
+
+    if (rsvpGuestName) {
+
+        rsvpGuestName.value =
+            data.guest;
+
+    }
+
+
+    // -----------------------------------------
+    // RSVP GUEST COUNT
+    // -----------------------------------------
+
+    allowedGuests = Number(data.guests) || 0;
+
+
+    // -----------------------------------------
+    // RSVP STATUS
+    // -----------------------------------------
+
+    if (data.submitted) {
+
+        rsvpAlreadySubmitted =
+            true;
+
+        lockRSVPForm();
+
+    }
+}
+
+const scrollButton = document.getElementById("scrollButton");
+
+if (scrollButton) {
+    scrollButton.addEventListener("click", function () {
         window.scrollTo({
             top: window.innerHeight,
             behavior: "smooth"
         });
-
     });
+}
 
-    // =========================
+// =========================
 // WEDDING COUNTDOWN
 // =========================
 
@@ -198,7 +426,7 @@ openInvitation.addEventListener("click", function () {
 
     weddingMusic.volume = 0.5;
 
-    weddingMusic.play().catch(function(error) {
+    weddingMusic.play().catch(function (error) {
         console.log("Music could not autoplay:", error);
     });
 
@@ -218,61 +446,23 @@ if (guest) {
     document.getElementById("guestName").textContent = guest;
 }*/
 
-// =========================================
-// RSVP FORM
-// =========================================
-
-const rsvpGuestName = document.getElementById("rsvpGuestName");
-const attendanceButtons =
-    document.querySelectorAll(".attendance-button");
-
-const minusGuest =
-    document.getElementById("minusGuest");
-
-const plusGuest =
-    document.getElementById("plusGuest");
-
-const guestCount =
-    document.getElementById("guestCount");
-
-const submitRsvp =
-    document.getElementById("submitRsvp");
-
-const rsvpMessage =
-    document.getElementById("rsvpMessage");
-    
-// RSVP LOCK STATUS
-let rsvpAlreadySubmitted = false;
 
 
 // Get guest name from URL
 
-const rsvpParams =
-    new URLSearchParams(window.location.search);
-
-const rsvpGuest =
-    rsvpParams.get("guest");
-
 const rsvpCode =
-    rsvpParams.get("code");
-
-if (rsvpGuest) {
-
-    rsvpGuestName.value =
-        decodeURIComponent(rsvpGuest);
-
-}
+    invitationCode;
 
 
 // Attendance
 
 let selectedAttendance = "";
 
-attendanceButtons.forEach(function(button) {
+attendanceButtons.forEach(function (button) {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
 
-        attendanceButtons.forEach(function(btn) {
+        attendanceButtons.forEach(function (btn) {
             btn.classList.remove("selected");
         });
 
@@ -288,24 +478,7 @@ attendanceButtons.forEach(function(button) {
 
 // Guest counter
 
-let numberOfGuests = 1;
-
-
-minusGuest.addEventListener("click", function() {
-
-    if (numberOfGuests > 1) {
-
-        numberOfGuests--;
-
-        guestCount.textContent =
-            numberOfGuests;
-
-    }
-
-});
-
-
-plusGuest.addEventListener("click", function() {
+/* plusGuest.addEventListener("click", function() {
 
     if (numberOfGuests < 10) {
 
@@ -317,49 +490,76 @@ plusGuest.addEventListener("click", function() {
     }
 
 });
+*/
 
 // =========================================
-// CHECK WHETHER THIS INVITATION ALREADY
-// SUBMITTED AN RSVP
+// CHECK RSVP STATUS
 // =========================================
 
 async function checkRSVPStatus() {
 
+    console.log(
+        "Checking invitation..."
+    );
+
+
     if (!rsvpCode) {
 
-        console.error("Invitation code is missing.");
+        rsvpMessage.textContent =
+            "Invitation code is missing.";
 
         return;
+
     }
+
 
     try {
 
-        const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbzsxoFCUH3kBUilZrvRhEL7ox7N1i-bAb9tNMw05Uy3LmHOej5DFMTTNGctNziHnDa_/exec" +
-            "?action=checkRSVP&code=" +
-            encodeURIComponent(rsvpCode)
-        );
-
         const result =
-            await response.json();
+            await getInvitationData();
 
-        if (result.submitted) {
 
-            rsvpAlreadySubmitted = true;
-
-            lockRSVPForm();
+        if (
+            !result ||
+            !result.found
+        ) {
 
             rsvpMessage.textContent =
-                "Your RSVP has already been received. Thank you!";
+                "Invalid invitation.";
+
+            return;
 
         }
+
+
+        displayInvitationData(result);
+
+
+        console.log(
+            "Guest:",
+            result.guest
+        );
+
+        console.log(
+            "Guests:",
+            result.guests
+        );
+
+        console.log(
+            "Submitted:",
+            result.submitted
+        );
+
 
     } catch (error) {
 
         console.error(
-            "Could not check RSVP status:",
+            "RSVP status check failed:",
             error
         );
+
+        rsvpMessage.textContent =
+            "Unable to check RSVP status.";
 
     }
 }
@@ -370,37 +570,36 @@ async function checkRSVPStatus() {
 
 function lockRSVPForm() {
 
-    attendanceButtons.forEach(function(button) {
+    attendanceButtons.forEach(function (button) {
 
         button.disabled = true;
 
-        button.style.pointerEvents = "none";
+        button.style.pointerEvents =
+            "none";
 
     });
 
-
-    minusGuest.disabled = true;
-
-    plusGuest.disabled = true;
-
     submitRsvp.disabled = true;
-
 
     submitRsvp.textContent =
         "RSVP ALREADY SENT ♥";
 
-
     rsvpMessage.textContent =
         "Your RSVP has already been received. Thank you!";
 }
+// =========================================
+// CHECK RSVP WHEN PAGE OPENS
+// =========================================
+
 checkRSVPStatus();
 
-// Submit RSVP
+// =========================================
+// SUBMIT RSVP
+// =========================================
 
-submitRsvp.addEventListener("click", async function() {
+submitRsvp.addEventListener("click", async function () {
 
-    // Prevent changing/submitting an RSVP
-    // that has already been submitted
+    // Already submitted
     if (rsvpAlreadySubmitted) {
 
         rsvpMessage.textContent =
@@ -410,135 +609,174 @@ submitRsvp.addEventListener("click", async function() {
     }
 
 
+    // Check attendance
     if (!selectedAttendance) {
 
         rsvpMessage.textContent =
             "Please select whether you will attend.";
 
         return;
-
     }
 
 
-    const guestName =
-        rsvpGuestName.value.trim();
-
-
-    if (!guestName) {
+    // Check code
+    if (!rsvpCode) {
 
         rsvpMessage.textContent =
-            "Guest name is missing.";
+            "Invitation code is missing.";
 
         return;
-
     }
 
 
+    // Prevent double click
     submitRsvp.disabled = true;
 
     submitRsvp.textContent =
         "SENDING...";
 
 
-    const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzsxoFCUH3kBUilZrvRhEL7ox7N1i-bAb9tNMw05Uy3LmHOej5DFMTTNGctNziHnDa_/exec",
-        {
-            method: "POST",
-
-            body: JSON.stringify({
-
-            guest: guestName,
-
-            code: rsvpCode,
-
-            attendance:
-            selectedAttendance,
-
-            numberOfGuests:
-            numberOfGuests
-
-})
-        }
-    );
-
-
-    const result =
-        await response.json();
-
-
-    if (result.success) {
-        
-         rsvpAlreadySubmitted = true;
-
-    lockRSVPForm();
-
-        rsvpMessage.textContent =
-            "Thank you! Your RSVP has been received.";
-
-        submitRsvp.textContent =
-            "RSVP SENT ♥";
-
-    } else {
-
-        rsvpMessage.textContent =
-            "Something went wrong. Please try again.";
-
-        submitRsvp.disabled = false;
-
-        submitRsvp.textContent =
-            "RSVP NOW ♥";
-
-    }
-
-});
-
-// =========================================
-// CHECK IF RSVP ALREADY SUBMITTED
-// =========================================
-
-async function checkRSVPStatus() {
-
-    if (!rsvpCode) {
-
-        console.error(
-            "Invitation code is missing."
-        );
-
-        return;
-    }
-
-
     try {
 
         const response = await fetch(
+    RSVP_API,
+    {
+        method: "POST",
 
-            "https://script.google.com/macros/s/AKfycbzsxoFCUH3kBUilZrvRhEL7ox7N1i-bAb9tNMw05Uy3LmHOej5DFMTTNGctNziHnDa_/exec" +
-
-            "?action=checkRSVP&code=" +
-
-            encodeURIComponent(rsvpCode)
-
-        );
+        body: JSON.stringify({
+            code: rsvpCode,
+            attendance: selectedAttendance
+        })
+    }
+);
 
 
         const result =
             await response.json();
 
 
-        if (result.submitted) {
+        console.log(
+            "RSVP submission:",
+            result
+        );
 
-            rsvpAlreadySubmitted = true;
+
+        // =====================================
+        // SUCCESS
+        // =====================================
+
+        if (result.success) {
+
+            rsvpAlreadySubmitted =
+                true;
+
+
+            // Update local invitation data
+            const updatedInvitation = {
+
+                found: true,
+
+                guest:
+                    rsvpGuestName.value,
+
+                guests:
+                    allowedGuests,
+
+                submitted: true,
+
+                attendance:
+                    selectedAttendance
+
+            };
+
+
+            invitationData =
+                updatedInvitation;
+
+
+            localStorage.setItem(
+                "wedding_invitation_" + rsvpCode,
+                JSON.stringify(
+                    updatedInvitation
+                )
+            );
+
 
             lockRSVPForm();
 
+
+            rsvpMessage.textContent =
+                "Thank you! Your RSVP has been received.";
+
+
+            submitRsvp.textContent =
+                "RSVP SENT ♥";
+
+
+            return;
         }
+
+        // =====================================
+        // ALREADY SUBMITTED
+        // =====================================
+
+        if (result.alreadySubmitted) {
+
+            rsvpAlreadySubmitted =
+                true;
+
+            lockRSVPForm();
+
+            return;
+        }
+
+
+        // =====================================
+        // ERROR
+        // =====================================
+
+        rsvpMessage.textContent =
+            result.error ||
+            "Something went wrong. Please try again.";
+
+        submitRsvp.disabled =
+            false;
+
+        submitRsvp.textContent =
+            "RSVP NOW ♥";
+
 
     } catch (error) {
 
         console.error(
-            "RSVP status check failed:",
+            "RSVP submission failed:",
             error
         );
 
+        rsvpMessage.textContent =
+            "Unable to submit RSVP. Please try again.";
+
+        submitRsvp.disabled =
+            false;
+
+        submitRsvp.textContent =
+            "RSVP NOW ♥";
     }
-}
+
+});
+
+// =========================================
+// LOAD INVITATION IMMEDIATELY
+// =========================================
+
+getInvitationData()
+    .then(function (result) {
+
+        if (result) {
+
+            displayInvitationData(result);
+
+        }
+
+    });
+

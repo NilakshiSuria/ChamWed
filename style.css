@@ -68,20 +68,31 @@ body {
     margin-bottom: 25px;
 }
 
-h1 {
-    font-size: 50px;
-    font-weight: normal;
-    line-height: 1.05;
-
-    margin-bottom: 25px;
+.person {
+    text-align: center;
 }
 
-h1 span {
-    display: block;
+.person h1 {
+    margin-bottom: 0px;
+}
 
-    font-size: 22px;
-    color: #b89555;
-    margin: 8px 0;
+.relation {
+    font-size: 14px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.parents {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.and {
+    text-align: center;
+    margin: 15px 0;
 }
 
 .invite-text {
@@ -562,11 +573,9 @@ button span {
     border: 1px solid #d1bd91;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #e8e0d2,
-            #d8d0c0
-        );
+            #d8d0c0);
 
     display: flex;
 
@@ -758,6 +767,7 @@ button span {
 
     color: #d8d1c4;
 }
+
 /* Google Calendar */
 .calendar-button {
     display: inline-block;
@@ -817,11 +827,11 @@ button span {
     }
 
     .calendar-button {
-    margin-top: 20px;
-    padding: 11px 18px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-}
+        margin-top: 20px;
+        padding: 11px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
 }
 
 /* =========================
@@ -1123,7 +1133,7 @@ button span {
 
     border: 1px solid #b89555;
 
-    color: #26332b;
+    color: #f8f4ec;
 
     text-decoration: none;
 
@@ -1135,11 +1145,9 @@ button span {
 }
 
 .map-button:hover {
-    background: #26332b;
-
-    color: #f8f4ec;
-
-    border-color: #26332b;
+    background: #b89555;
+    color: #26332b;
+    border-color: #b89555;
 }
 
 
@@ -1348,7 +1356,8 @@ button span {
 
     padding: 15px;
 
-    margin: 0;   /* IMPORTANT */
+    margin: 0;
+    /* IMPORTANT */
 
     border: 1px solid rgba(184, 149, 85, 0.5);
 
@@ -1375,7 +1384,7 @@ button span {
 }
 
 /* Guest counter */
-
+/*
 .guest-counter {
     display: flex;
     align-items: center;
@@ -1415,7 +1424,7 @@ button span {
     line-height: 1;
 
     cursor: pointer;
-}
+} 
 
 .guest-counter span {
     display: flex;
@@ -1426,7 +1435,7 @@ button span {
 
     font-size: 20px;
     line-height: 1;
-}
+} */
 
 
 /* Message */
@@ -1562,11 +1571,6 @@ button span {
     opacity: 0.45;
     cursor: not-allowed;
     pointer-events: none;
-}
-
-.guest-counter button:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
 }
 
 #submitRsvp:disabled {
@@ -1895,14 +1899,12 @@ button span {
 
 .hero {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 
     background:
-        radial-gradient(
-            circle at center,
+        radial-gradient(circle at center,
             rgba(255, 255, 255, 0.45),
-            transparent 60%
-        ),
+            transparent 60%),
         #f8f4ec;
 }
 
@@ -2242,10 +2244,8 @@ button span {
     text-align: center;
 
     background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.35),
-            rgba(255, 255, 255, 0.35)
-        ),
+        linear-gradient(rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)),
         url("images/wedding-background.jpg");
 
     background-size: cover;
@@ -2487,11 +2487,11 @@ body.invitation-locked {
     overflow: hidden;
 }
 
-body.invitation-locked > *:not(#welcomeScreen) {
+body.invitation-locked>*:not(#welcomeScreen) {
     visibility: hidden;
 }
 
-body.invitation-open > *:not(#welcomeScreen) {
+body.invitation-open>*:not(#welcomeScreen) {
     visibility: visible;
 }
 
@@ -2506,10 +2506,8 @@ body.invitation-open > *:not(#welcomeScreen) {
 
 .final-section {
     background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.35),
-            rgba(255, 255, 255, 0.35)
-        ),
+        linear-gradient(rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)),
         url("");
 
     background-size: cover;
@@ -2622,7 +2620,7 @@ body.invitation-open > *:not(#welcomeScreen) {
     background: rgba(250, 247, 240, 0.55);
 }
 
-.welcome-content > *:not(.welcome-photo) {
+.welcome-content>*:not(.welcome-photo) {
     position: relative;
     z-index: 2;
 }
@@ -2707,6 +2705,7 @@ body.invitation-open > *:not(#welcomeScreen) {
 .memory-three {
     margin-top: 30px;
 }
+
 /* =========================================
    MOBILE MEMORIES
 ========================================= */
@@ -2753,4 +2752,81 @@ body.invitation-open > *:not(#welcomeScreen) {
         margin-top: 20px;
     }
 
+}
+
+/* Add space between wedding date and venue */
+.hero-venue {
+    margin-top: 40px !important;
+}
+
+.hero-venue .venue-name {
+    margin-bottom: 5px;
+}
+
+.hero-venue {
+    margin-bottom: 15px;
+}
+/* Wedding venue styling */
+
+.hero-venue {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.venue-location-icon {
+    width: 19px;
+    height: 19px;
+    color: #b89555;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.hero-venue .venue-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hero-venue .hotel-name {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8d7040;
+    margin-top: 9px !important;
+    line-height: 1.5;
+}
+
+/* Make both buttons visually consistent */
+.calendar-button,
+.map-button {
+    border-radius: 8px !important;
+    height: 52px;
+    min-width: 350px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .calendar-button,
+    .map-button {
+        min-width: 260px;
+        width: 100%;
+        margin: 10px auto;
+    }
+}
+/* Prevent unwanted horizontal scrolling */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.hero {
+    overflow-x: hidden !important;
+}
+/* Darken and soften only the middle wedding photo */
+.memory-two .memory-photo img {
+    filter: brightness(0.72) contrast(0.92) saturate(0.85) !important;
 }
